@@ -2,21 +2,18 @@
   "compilerOptions": {
     "outDir": "./dist",
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es2016",
     "lib": [
-      "esnext"
+      "es2016"
     ],
     "alwaysStrict": true,
-    "allowJs": true,
+    //"allowJs": true,
     "strict": true,
     "preserveConstEnums": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
+    //"moduleResolution": "node",
+    //"sourceMap": true,
     "esModuleInterop": true,
-    "types": [
-      "@cloudflare/workers-types",
-      "@types/service-worker-mock",
-    ]
+    "types": []
   },
   "include": [
     "src"

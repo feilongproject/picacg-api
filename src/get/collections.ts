@@ -1,5 +1,6 @@
 import { headers } from "../config";
-import { getSign } from "../mod/getSign";
+import { getSign } from "../auth/getSign";
+import fetch from "node-fetch";
 
 export async function getCollections(token: string): Promise<Collections> {
 
@@ -9,7 +10,7 @@ export async function getCollections(token: string): Promise<Collections> {
 
     console.log(headers.time);
     console.log(headers.signature);
-    console.log(headers.authorization);
+    //console.log(headers.authorization);
     return await fetch(`https://picaapi.picacomic.com/collections`, {
         headers
     }).then(res => {

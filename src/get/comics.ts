@@ -1,5 +1,6 @@
 import { headers } from "../config";
-import { getSign } from "../mod/getSign";
+import { getSign } from "../auth/getSign";
+import fetch from "node-fetch";
 
 /**
  * 获取各个分区参数
@@ -22,7 +23,7 @@ export async function getComicCategories(token: string): Promise<ComicsCategorie
 
         return res.text();
     }).then(text => {
-        console.log(text);
+        //console.log(text);
         return JSON.parse(text);
     })
 }
@@ -79,10 +80,9 @@ export async function getComicsInfo(token: string, id: string): Promise<ComicsIn
         headers
     }).then(res => {
         //console.log()
-
         return res.text();
     }).then(text => {
-        console.log(text);
+        //console.log(text);
         return JSON.parse(text);
     })
 }
@@ -111,7 +111,7 @@ export async function getComicsEps(token: string, bookId: string, page: string):
 
         return res.text();
     }).then(text => {
-        console.log(text);
+        //console.log(text);
         return JSON.parse(text);
     })
     return eps;
@@ -139,7 +139,7 @@ export async function getComicsPics(token: string, bookId: string, epsId: string
     }).then(res => {
         return res.text();
     }).then(text => {
-        console.log(text);
+        //console.log(text);
         return JSON.parse(text);
     })
     return eps;

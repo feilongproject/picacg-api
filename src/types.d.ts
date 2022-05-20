@@ -2,7 +2,7 @@ export { }
 
 
 declare global {
-    const PICACG: KVNamespace;
+
     interface Token {
         code: number,
         message: string,
