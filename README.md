@@ -1,5 +1,16 @@
-# 这里是后端页面
-后端功能依赖于 `cloudflare` 的 `worker` 和 `KV namespaces`
+# 这里是[picacg](https://github.com/feilongproject/picacg)后端组成
+
+## 部署
+### 本地化部署
+
+```
+npm i
+npm run dev
+```
+
+### 云服务部署
+- [Replit](https://replit.com)(目前项目正在使用的方式)
+- [Heroku](https://heroku.com)(未进行测试)
 
 
 ## 请求url
