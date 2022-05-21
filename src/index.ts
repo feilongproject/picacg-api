@@ -35,7 +35,7 @@ async function main(request: Request, response: Response): Promise<any> {
         case "/comics/block":
             var page = request.query.page;
             var c = request.query.c;
-            var sort = request.query.sort;
+            var sort = request.query.s;
 
             if (page && c && (sort == "ua" || sort == "dd" || sort == "da" || sort == "ld" || sort == "vd")) {
                 var comicsList = await getComicsBlock(token.data.token, parseInt(page.toString()), encodeURI(c.toString()), sort);
