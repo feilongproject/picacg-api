@@ -4,13 +4,15 @@ import { getCollections } from './get/collections'
 import { getComicCategories, getComicsBlock, getComicsEps, getComicsInfo, getComicsPics } from './get/comics';
 import { getStorage } from './get/storage';
 
+const PORT = 3000;
+
 var app = express();
 app.use(express.static('public'));
 app.get("/*", main);
 
 
 
-var listener = app.listen(3000, function () {
+var listener = app.listen(PORT, function () {
     console.log('Your app is listening on port ' + JSON.stringify(listener.address()));
 });
 
