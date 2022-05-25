@@ -4,11 +4,19 @@ export { }
 declare global {
 
     interface Token {
+        error?: string,
+        detail?: string,
         code: number,
         message: string,
         data: {
             token: string,
         },
+    }
+
+    interface Account {
+        email: string,
+        password: string,
+        token: Token,
     }
 
     interface Collections {

@@ -10,7 +10,7 @@ app.get("/*", main);
 
 
 
-var listener = app.listen(2333, function () {
+var listener = app.listen(3000, function () {
     console.log('Your app is listening on port ' + JSON.stringify(listener.address()));
 });
 
@@ -18,6 +18,12 @@ async function main(request: Request, response: Response): Promise<any> {
     response.setHeader('Access-Control-Allow-Origin', '*');
 
     var pathname = request.path;
+
+    if (pathname == "/flushToken") {
+        var token: Token = await getToken(true);
+        response.send("flush token ok");
+        return;
+    }
 
     var token: Token = await getToken();
     //console.log(`get token: ${token.data.token}`);
@@ -44,7 +50,6 @@ async function main(request: Request, response: Response): Promise<any> {
                 response.status(500).send(`no page:${page}/c:${c}/s:${sort}`);
             }
             return;
-
         case "/comics/info":
             var bookId = request.query.bookId;
 
